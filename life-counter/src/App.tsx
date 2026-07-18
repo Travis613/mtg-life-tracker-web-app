@@ -1,3 +1,9 @@
+import { Counter } from "./components/Counter";
+
 export default function () {
-  return <div></div>;
+  return (
+    <div>
+      <Counter />
+    </div>
+  );
 }
