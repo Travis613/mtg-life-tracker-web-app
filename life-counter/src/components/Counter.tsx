@@ -1,7 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-export function Counter() {
-  const [count, setCount] = useState(20);
+interface counterProps {
+  amountOfPlayers: number;
+}
+
+export function Counter({ amountOfPlayers }: counterProps) {
+  const [count, setCount] = useState<number>(amountOfPlayers > 2 ? 40 : 20);
+
+  useEffect(() => {
+    setCount(amountOfPlayers > 2 ? 40 : 20);
+  }, [amountOfPlayers]);
+
   return (
     <div
       style={{

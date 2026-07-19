@@ -1,0 +1,11 @@
+.counters-container {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 750px) {
+  .counters-container {
+    flex-direction: column;
+  }
+}
