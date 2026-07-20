@@ -30,8 +30,8 @@ export default function () {
   }
 
   return (
-    <div className="body">
-      <div className="settings-bar">
+    <div>
+      <div>
         <Dices
           onClick={() => (
             setDiceVisability(true),
@@ -76,7 +76,7 @@ export default function () {
         </button>
       </div>
 
-      <div className="counters-container">
+      <div>
         <Counter amountOfPlayers={playerAmount} />
         <Counter amountOfPlayers={playerAmount} />
         <div style={{ display: playerAmount > 2 ? "block" : "none" }}>

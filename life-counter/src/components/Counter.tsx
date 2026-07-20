@@ -12,14 +12,7 @@ export function Counter({ amountOfPlayers }: counterProps) {
   }, [amountOfPlayers]);
 
   return (
-    <div
-      style={{
-        border: "solid",
-        width: "fit-content",
-        display: "flex",
-        flexDirection: "row",
-      }}
-    >
+    <div>
       <button onClick={() => setCount(count - 1)}>- 1</button>
       <div>{count}</div>
       <button onClick={() => setCount(count + 1)}>+ 1</button>
