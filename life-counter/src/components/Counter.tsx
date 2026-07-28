@@ -18,6 +18,10 @@ export function Counter({ amountOfPlayers, background }: counterProps) {
         backgroundImage: background,
         backgroundRepeat: "no-repeat",
         color: "white",
+        backgroundSize: "cover",
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-between",
       }}
     >
       <button onClick={() => setCount(count - 1)}>- 1</button>
