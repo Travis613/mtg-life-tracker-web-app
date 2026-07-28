@@ -6,6 +6,8 @@ import { ToolBar } from "./components/toolBar";
 export default function () {
   const [playerAmount, setPlayerAmount] = useState(2);
 
+  const playersArray = [...Array(playerAmount)];
+
   const diceOptions = [
     <Dice1 />,
     <Dice2 />,
@@ -26,8 +28,6 @@ export default function () {
   }
 
   function handleChangingPlayerAmounts(newPlayerAmount: number) {
-    console.log("clicked me");
-    console.log(newPlayerAmount);
     setPlayerAmount(newPlayerAmount);
   }
 
@@ -40,38 +40,13 @@ export default function () {
         />
       </div>
       <div>
-        <Counter
-          amountOfPlayers={playerAmount}
-          background={applyRandomBackgroundColor()}
-        />
-        <Counter
-          amountOfPlayers={playerAmount}
-          background={applyRandomBackgroundColor()}
-        />
-        <div style={{ display: playerAmount > 2 ? "block" : "none" }}>
+        {playersArray.map((player, index) => (
           <Counter
             amountOfPlayers={playerAmount}
             background={applyRandomBackgroundColor()}
+            key={index}
           />
-        </div>
-        <div style={{ display: playerAmount > 3 ? "block" : "none" }}>
-          <Counter
-            amountOfPlayers={playerAmount}
-            background={applyRandomBackgroundColor()}
-          />
-        </div>
-        <div style={{ display: playerAmount > 4 ? "block" : "none" }}>
-          <Counter
-            amountOfPlayers={playerAmount}
-            background={applyRandomBackgroundColor()}
-          />
-        </div>
-        <div style={{ display: playerAmount > 5 ? "block" : "none" }}>
-          <Counter
-            amountOfPlayers={playerAmount}
-            background={applyRandomBackgroundColor()}
-          />
-        </div>
+        ))}
       </div>
     </div>
   );
