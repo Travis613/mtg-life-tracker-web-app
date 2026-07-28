@@ -2,25 +2,20 @@ import { useEffect, useState } from "react";
 
 interface counterProps {
   amountOfPlayers: number;
+  background: string;
 }
 
-export function Counter({ amountOfPlayers }: counterProps) {
+export function Counter({ amountOfPlayers, background }: counterProps) {
   const [count, setCount] = useState<number>(amountOfPlayers > 2 ? 40 : 20);
 
   useEffect(() => {
     setCount(amountOfPlayers > 2 ? 40 : 20);
   }, [amountOfPlayers]);
 
-  function applyRandomBackgroundColor() {
-    const colors = ["black", "blue", "green", "purple", "red", "yellow"];
-    const color = colors[Math.floor(Math.random() * colors.length)];
-    return `url("/${color}.svg")`;
-  }
-
   return (
     <div
       style={{
-        backgroundImage: applyRandomBackgroundColor(),
+        backgroundImage: background,
         backgroundRepeat: "no-repeat",
         color: "white",
       }}
