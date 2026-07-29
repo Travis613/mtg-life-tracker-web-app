@@ -15,18 +15,35 @@ export function Counter({ amountOfPlayers, background }: counterProps) {
   return (
     <div
       style={{
+        height: "100%",
+        width: "100%",
         backgroundImage: background,
         backgroundRepeat: "no-repeat",
         color: "white",
         backgroundSize: "cover",
+        backgroundPosition: "center",
         display: "flex",
         flexDirection: "row",
-        justifyContent: "space-between",
+        justifyContent: "space-evenly",
+        alignItems: "center",
+        fontSize: "75px",
       }}
     >
-      <button onClick={() => setCount(count - 1)}>- 1</button>
+      <button
+        style={{ backgroundColor: "lightcoral" }}
+        onClick={() => setCount(count - 1)}
+        className="counterBtn"
+      >
+        - 1
+      </button>
       <div>{count}</div>
-      <button onClick={() => setCount(count + 1)}>+ 1</button>
+      <button
+        style={{ backgroundColor: "lightgreen" }}
+        onClick={() => setCount(count + 1)}
+        className="counterBtn"
+      >
+        + 1
+      </button>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Dice1, Dice2, Dice3, Dice4, Dice5, Dice6 } from "lucide-react";
 import { Counter } from "./components/Counter";
-import { ToolBar } from "./components/toolBar";
+import { ToolBar } from "./components/ToolBar";
 
 export default function () {
   const [playerAmount, setPlayerAmount] = useState(2);
@@ -32,20 +32,47 @@ export default function () {
   }
 
   return (
-    <div>
+    <div
+      style={{
+        height: "100vh",
+        width: "100vw",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
       <div>
         <ToolBar
           diceRoll={rollDice}
           changePlayerAmount={handleChangingPlayerAmounts}
         />
       </div>
-      <div>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: playerAmount === 2 ? "column" : "row",
+          height: "100%",
+          width: "100%",
+          justifyContent: "center",
+          alignItems: "center",
+          border: "solid",
+          flexWrap: "wrap",
+        }}
+      >
         {playersArray.map((player, index) => (
-          <Counter
-            amountOfPlayers={playerAmount}
-            background={applyRandomBackgroundColor()}
+          <div
             key={index}
-          />
+            style={{
+              height: playerAmount === 3 ? "100%" : "50%",
+              width: playerAmount === 2 ? "100%" : "33.333333333%",
+            }}
+          >
+            <Counter
+              amountOfPlayers={playerAmount}
+              background={applyRandomBackgroundColor()}
+            />
+          </div>
         ))}
       </div>
     </div>

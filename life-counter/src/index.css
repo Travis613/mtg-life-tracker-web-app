@@ -1,0 +1,10 @@
+body {
+  background-color: darkslategrey;
+}
+.counterBtn {
+  height: 30%;
+  width: 30%;
+  border: solid;
+  border-radius: 20%;
+  font-size: 50px;
+}
