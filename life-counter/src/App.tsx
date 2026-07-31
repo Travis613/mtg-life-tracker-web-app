@@ -32,7 +32,7 @@ export default function () {
       "#DB2777",
       "#4B5563",
     ];
-    const color = playerColors[Math.floor(Math.random() * playerColors.length)];
+    let color = playerColors[Math.floor(Math.random() * playerColors.length)];
     return color;
   }
 
@@ -43,12 +43,13 @@ export default function () {
   return (
     <div
       style={{
-        height: "100vh",
-        width: "100vw",
+        height: "95dvh",
+        width: "95dvw",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
+        gap: "1%",
       }}
     >
       <div>
@@ -67,6 +68,7 @@ export default function () {
           alignItems: "center",
           border: "solid",
           flexWrap: "wrap",
+          gap: "1%",
         }}
         className="counterContainer"
       >
@@ -74,8 +76,8 @@ export default function () {
           <div
             key={index}
             style={{
-              height: playerAmount === 3 ? "100%" : "50%",
-              width: playerAmount === 2 ? "100%" : "33.333333333%",
+              height: playerAmount === 3 ? "95%" : "45%",
+              width: playerAmount === 2 ? "95%" : "30%",
             }}
           >
             <Counter
