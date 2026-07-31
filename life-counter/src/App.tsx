@@ -9,12 +9,12 @@ export default function () {
   const playersArray = [...Array(playerAmount)];
 
   const diceOptions = [
-    <Dice1 />,
-    <Dice2 />,
-    <Dice3 />,
-    <Dice4 />,
-    <Dice5 />,
-    <Dice6 />,
+    <Dice1 style={{ backgroundColor: "white" }} />,
+    <Dice2 style={{ backgroundColor: "white" }} />,
+    <Dice3 style={{ backgroundColor: "white" }} />,
+    <Dice4 style={{ backgroundColor: "white" }} />,
+    <Dice5 style={{ backgroundColor: "white" }} />,
+    <Dice6 style={{ backgroundColor: "white" }} />,
   ];
 
   function rollDice() {
