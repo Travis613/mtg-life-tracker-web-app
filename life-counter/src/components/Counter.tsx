@@ -17,11 +17,8 @@ export function Counter({ amountOfPlayers, background }: counterProps) {
       style={{
         height: "100%",
         width: "100%",
-        backgroundImage: background,
-        backgroundRepeat: "no-repeat",
+        backgroundColor: background,
         color: "white",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-evenly",
