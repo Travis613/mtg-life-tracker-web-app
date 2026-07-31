@@ -12,7 +12,7 @@ export function ToolBar({ diceRoll, changePlayerAmount }: Props) {
 
   return (
     <div>
-      <div>
+      <div style={{ backgroundColor: "white" }}>
         <Dices
           onClick={() => (
             setDiceVisability(true),
