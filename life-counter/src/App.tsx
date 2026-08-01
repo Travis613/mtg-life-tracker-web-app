@@ -9,12 +9,12 @@ export default function () {
   const playersArray = [...Array(playerAmount)];
 
   const diceOptions = [
-    <Dice1 style={{ backgroundColor: "white" }} />,
-    <Dice2 style={{ backgroundColor: "white" }} />,
-    <Dice3 style={{ backgroundColor: "white" }} />,
-    <Dice4 style={{ backgroundColor: "white" }} />,
-    <Dice5 style={{ backgroundColor: "white" }} />,
-    <Dice6 style={{ backgroundColor: "white" }} />,
+    <Dice1 className="dice" />,
+    <Dice2 className="dice" />,
+    <Dice3 className="dice" />,
+    <Dice4 className="dice" />,
+    <Dice5 className="dice" />,
+    <Dice6 className="dice" />,
   ];
 
   function rollDice() {
@@ -44,7 +44,7 @@ export default function () {
     <div
       style={{
         height: "95dvh",
-        width: "95dvw",
+        width: "100%",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
@@ -62,11 +62,10 @@ export default function () {
         style={{
           display: "flex",
           flexDirection: playerAmount === 2 ? "column" : "row",
-          height: "100%",
+          flex: 1,
           width: "100%",
           justifyContent: "center",
           alignItems: "center",
-          border: "solid",
           flexWrap: "wrap",
           gap: "1%",
         }}

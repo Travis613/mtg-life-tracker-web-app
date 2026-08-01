@@ -27,15 +27,23 @@ export function Counter({ amountOfPlayers, background }: counterProps) {
       }}
     >
       <button
-        style={{ backgroundColor: "lightcoral" }}
+        style={{
+          backgroundColor: "lightcoral",
+          width: amountOfPlayers === 2 ? "15%" : "30%",
+          height: amountOfPlayers === 3 ? "15%" : "30%",
+        }}
         onClick={() => setCount(count - 1)}
         className="counterBtn"
       >
         - 1
       </button>
-      <div>{count}</div>
+      <div className="count">{count}</div>
       <button
-        style={{ backgroundColor: "lightgreen" }}
+        style={{
+          backgroundColor: "lightgreen",
+          width: amountOfPlayers === 2 ? "15%" : "30%",
+          height: amountOfPlayers === 3 ? "15%" : "30%",
+        }}
         onClick={() => setCount(count + 1)}
         className="counterBtn"
       >
