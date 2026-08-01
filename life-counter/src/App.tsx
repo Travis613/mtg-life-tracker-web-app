@@ -71,7 +71,7 @@ export default function () {
         }}
         className="counterContainer"
       >
-        {playersArray.map((player, index) => (
+        {playersArray.map((_player, index) => (
           <div
             key={index}
             style={{
