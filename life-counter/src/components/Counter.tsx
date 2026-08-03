@@ -40,7 +40,7 @@ export function Counter({ amountOfPlayers, background }: counterProps) {
       <div className="count">{count}</div>
       <button
         style={{
-          backgroundColor: "lightgreen",
+          backgroundColor: "lightgray",
           width: amountOfPlayers === 2 ? "15%" : "30%",
           height: amountOfPlayers === 3 ? "15%" : "30%",
         }}
