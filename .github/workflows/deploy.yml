@@ -15,6 +15,10 @@ concurrency:
   group: "pages"
   cancel-in-progress: true
 
+defaults:
+  run:
+    working-directory: ./life-counter
+
 jobs:
   deploy:
     environment:
@@ -30,6 +34,7 @@ jobs:
         with:
           node-version: 20
           cache: "npm"
+          cache-dependency-path: "./life-counter/package-lock.json"
 
       - name: Install dependencies
         run: npm ci
@@ -40,8 +45,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Change "dist" to "build" if your npm run build creates a folder named build
-          path: "./dist"
+          # Points directly to the build folder inside your subfolder
+          path: "./life-counter/dist"
 
       - name: Deploy to GitHub Pages
         id: deployment
