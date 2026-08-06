@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { RotateCw } from "lucide-react";
 
 interface counterProps {
   amountOfPlayers: number;
@@ -7,6 +8,7 @@ interface counterProps {
 
 export function Counter({ amountOfPlayers, background }: counterProps) {
   const [count, setCount] = useState<number>(amountOfPlayers > 2 ? 40 : 20);
+  const [rotateAmount, setRotateAmount] = useState(0);
 
   useEffect(() => {
     setCount(amountOfPlayers > 2 ? 40 : 20);
@@ -20,35 +22,52 @@ export function Counter({ amountOfPlayers, background }: counterProps) {
         backgroundColor: background,
         color: "white",
         display: "flex",
-        flexDirection: "row",
-        justifyContent: "space-evenly",
-        alignItems: "center",
+        flexDirection: "column",
+        justifyContent: "space-around",
         fontSize: "75px",
+        rotate: `${rotateAmount}deg`,
       }}
     >
-      <button
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <button
+          onClick={() =>
+            rotateAmount === 0 ? setRotateAmount(180) : setRotateAmount(0)
+          }
+        >
+          <RotateCw />
+        </button>
+      </div>
+      <div
         style={{
-          backgroundColor: "lightcoral",
-          width: amountOfPlayers === 2 ? "15%" : "30%",
-          height: amountOfPlayers === 3 ? "15%" : "30%",
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-evenly",
         }}
-        onClick={() => setCount(count - 1)}
-        className="counterBtn"
       >
-        - 1
-      </button>
-      <div className="count">{count}</div>
-      <button
-        style={{
-          backgroundColor: "lightgreen",
-          width: amountOfPlayers === 2 ? "15%" : "30%",
-          height: amountOfPlayers === 3 ? "15%" : "30%",
-        }}
-        onClick={() => setCount(count + 1)}
-        className="counterBtn"
-      >
-        + 1
-      </button>
+        <button
+          style={{
+            backgroundColor: "lightcoral",
+            width: amountOfPlayers === 2 ? "15%" : "30%",
+            height: "100%",
+          }}
+          onClick={() => setCount(count - 1)}
+          className="counterBtn"
+        >
+          - 1
+        </button>
+        <div className="count">{count}</div>
+        <button
+          style={{
+            backgroundColor: "lightgreen",
+            width: amountOfPlayers === 2 ? "15%" : "30%",
+            height: "100%",
+          }}
+          onClick={() => setCount(count + 1)}
+          className="counterBtn"
+        >
+          + 1
+        </button>
+      </div>
     </div>
   );
 }
