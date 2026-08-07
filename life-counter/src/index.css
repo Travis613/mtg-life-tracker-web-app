@@ -6,6 +6,18 @@ body {
   border: solid;
   border-radius: 20%;
   font-size: 50px;
+  font-style: bold;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.counterBtn:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+}
+
+.rotateBtn:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.25);
 }
 
 .dice {

@@ -12,22 +12,47 @@ export function ToolBar({ diceRoll, changePlayerAmount }: Props) {
 
   return (
     <div>
-      <div style={{ backgroundColor: "white" }}>
-        <Dices
-          onClick={() => (
-            setDiceVisability(true),
-            setTimeout(() => {
-              setDiceVisability(false);
-            }, 750)
-          )}
-        />
-        <User
-          onClick={() =>
-            playerMenu ? setPlayerMenu(false) : setPlayerMenu(true)
-          }
-        />
+      <div
+        style={{
+          backgroundColor: "#121417",
+          display: "flex",
+          flexDirection: "row",
+          gap: "1%",
+        }}
+        className="toolbarBtn"
+      >
+        <div
+          style={{
+            border: "solid",
+            borderRadius: "20%",
+            backgroundColor: "white",
+          }}
+        >
+          <Dices
+            onClick={() => (
+              setDiceVisability(true),
+              setTimeout(() => {
+                setDiceVisability(false);
+              }, 750)
+            )}
+            size={32}
+          />
+        </div>
+        <div
+          style={{
+            border: "solid",
+            borderRadius: "20%",
+            backgroundColor: "white",
+          }}
+        >
+          <User
+            onClick={() =>
+              playerMenu ? setPlayerMenu(false) : setPlayerMenu(true)
+            }
+            size={32}
+          />
+        </div>
       </div>
-
       <div style={{ display: diceVisability ? "block" : "none" }}>
         {diceRoll()}
       </div>

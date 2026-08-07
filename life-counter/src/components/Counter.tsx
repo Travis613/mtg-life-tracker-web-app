@@ -28,11 +28,22 @@ export function Counter({ amountOfPlayers, background }: counterProps) {
         rotate: `${rotateAmount}deg`,
       }}
     >
-      <div style={{ display: "flex", justifyContent: "center" }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
         <button
           onClick={() =>
             rotateAmount === 0 ? setRotateAmount(180) : setRotateAmount(0)
           }
+          style={{
+            backgroundColor: "rgba(255, 255, 255, 0.15)",
+            border: "solid",
+            borderRadius: "20%",
+          }}
+          className="rotateBtn"
         >
           <RotateCw />
         </button>
@@ -46,7 +57,6 @@ export function Counter({ amountOfPlayers, background }: counterProps) {
       >
         <button
           style={{
-            backgroundColor: "lightcoral",
             width: amountOfPlayers === 2 ? "15%" : "30%",
             height: "100%",
           }}
@@ -58,7 +68,6 @@ export function Counter({ amountOfPlayers, background }: counterProps) {
         <div className="count">{count}</div>
         <button
           style={{
-            backgroundColor: "lightgreen",
             width: amountOfPlayers === 2 ? "15%" : "30%",
             height: "100%",
           }}
