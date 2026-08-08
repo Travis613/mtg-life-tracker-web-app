@@ -1,13 +1,9 @@
-button {
-  -webkit-tap-highlight-color: transparent;
-}
-
 body {
   background-color: #121417;
 }
 
 .counterBtn {
-  border: solid;
+  border: solid black;
   border-radius: 20%;
   font-size: 50px;
   font-style: bold;
