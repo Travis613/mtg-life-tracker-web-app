@@ -41,6 +41,8 @@ export function Counter({ amountOfPlayers, background }: counterProps) {
           style={{
             backgroundColor: "rgba(255, 255, 255, 0.15)",
             border: "solid",
+            borderColor: "black",
+            color: "black",
             borderRadius: "20%",
           }}
           className="rotateBtn"

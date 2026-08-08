@@ -3,6 +3,7 @@ body {
 }
 
 .counterBtn {
+  color: black;
   border: solid black;
   border-radius: 20%;
   font-size: 50px;
