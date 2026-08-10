@@ -11,14 +11,9 @@ body {
   background-color: rgba(255, 255, 255, 0.15);
 }
 
-.counterBtn:hover {
+.hoverBtn:hover {
   background-color: rgba(255, 255, 255, 0.25);
   cursor: pointer;
-}
-
-.rotateBtn:hover {
-  cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.25);
 }
 
 .dice {
@@ -36,9 +31,8 @@ body {
 
 .playerSelectingBtn {
   height: 28%;
-  width: 38%;
+  width: 75%;
   border: solid;
-  border-radius: 10%;
   font-size: 200%;
   margin: 1%;
 }

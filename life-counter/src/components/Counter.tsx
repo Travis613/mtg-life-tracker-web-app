@@ -45,7 +45,7 @@ export function Counter({ amountOfPlayers, background }: counterProps) {
             color: "black",
             borderRadius: "20%",
           }}
-          className="rotateBtn"
+          className="rotateBtn hoverBtn"
         >
           <RotateCw />
         </button>
@@ -63,7 +63,7 @@ export function Counter({ amountOfPlayers, background }: counterProps) {
             height: "100%",
           }}
           onClick={() => setCount(count - 1)}
-          className="counterBtn"
+          className="counterBtn hoverBtn"
         >
           - 1
         </button>

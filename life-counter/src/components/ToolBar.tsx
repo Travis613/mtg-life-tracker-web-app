@@ -1,4 +1,4 @@
-import { Dices, User } from "lucide-react";
+import { Dices, User, X } from "lucide-react";
 import { useState, type ReactElement } from "react";
 
 interface Props {
@@ -45,12 +45,11 @@ export function ToolBar({ diceRoll, changePlayerAmount }: Props) {
             backgroundColor: "white",
           }}
         >
-          <User
-            onClick={() =>
-              playerMenu ? setPlayerMenu(false) : setPlayerMenu(true)
-            }
-            size={32}
-          />
+          {playerMenu !== true ? (
+            <User onClick={() => setPlayerMenu(true)} size={32} />
+          ) : (
+            <X onClick={() => setPlayerMenu(false)} size={32} />
+          )}
         </div>
       </div>
       <div style={{ display: diceVisability ? "block" : "none" }}>
@@ -58,14 +57,15 @@ export function ToolBar({ diceRoll, changePlayerAmount }: Props) {
       </div>
 
       <div
+        className="dropdownPlayerMenu"
         style={{
           display: playerMenu ? "flex" : "none",
-          flexWrap: "wrap",
+          flexDirection: "column",
           backgroundColor: "white",
           border: "solid",
           borderRadius: "10%",
-          height: "55%",
-          width: "35%",
+          height: "60%",
+          width: "60%",
           position: "absolute",
           top: "40%",
           left: "50%",
@@ -104,6 +104,13 @@ export function ToolBar({ diceRoll, changePlayerAmount }: Props) {
           className="playerSelectingBtn"
         >
           6
+        </button>
+        <button
+          onClick={() => setPlayerMenu(false)}
+          className="playerSelectingBtn"
+          style={{ backgroundColor: "lightcoral" }}
+        >
+          Close
         </button>
       </div>
     </div>
