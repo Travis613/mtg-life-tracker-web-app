@@ -3,10 +3,9 @@ import { RotateCw } from "lucide-react";
 
 interface counterProps {
   amountOfPlayers: number;
-  background: string;
 }
 
-export function Counter({ amountOfPlayers, background }: counterProps) {
+export function Counter({ amountOfPlayers }: counterProps) {
   const [count, setCount] = useState<number>(amountOfPlayers > 2 ? 40 : 20);
   const [rotateAmount, setRotateAmount] = useState(0);
 
@@ -19,7 +18,6 @@ export function Counter({ amountOfPlayers, background }: counterProps) {
       style={{
         height: "100%",
         width: "100%",
-        backgroundColor: background,
         color: "white",
         display: "flex",
         flexDirection: "column",

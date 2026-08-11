@@ -7,6 +7,16 @@ export default function () {
   const [playerAmount, setPlayerAmount] = useState(2);
 
   const playersArray = [...Array(playerAmount)];
+  const playerColors = [
+    "#7C3AED",
+    "#2563EB",
+    "#059669",
+    "#DC2626",
+    "#D97706",
+    "#0891B2",
+    "#DB2777",
+    "#4B5563",
+  ];
 
   const diceOptions = [
     <Dice1 className="dice" />,
@@ -19,21 +29,6 @@ export default function () {
 
   function rollDice() {
     return diceOptions[Math.floor(Math.random() * diceOptions.length)];
-  }
-
-  function applyRandomBackgroundColor() {
-    const playerColors = [
-      "#7C3AED",
-      "#2563EB",
-      "#059669",
-      "#DC2626",
-      "#D97706",
-      "#0891B2",
-      "#DB2777",
-      "#4B5563",
-    ];
-    let color = playerColors[Math.floor(Math.random() * playerColors.length)];
-    return color;
   }
 
   function handleChangingPlayerAmounts(newPlayerAmount: number) {
@@ -77,12 +72,10 @@ export default function () {
             style={{
               height: playerAmount === 3 ? "95%" : "45%",
               width: playerAmount === 2 ? "95%" : "30%",
+              backgroundColor: playerColors[index],
             }}
           >
-            <Counter
-              amountOfPlayers={playerAmount}
-              background={applyRandomBackgroundColor()}
-            />
+            <Counter amountOfPlayers={playerAmount} />
           </div>
         ))}
       </div>
