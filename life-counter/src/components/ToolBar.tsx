@@ -63,7 +63,6 @@ export function ToolBar({ diceRoll, changePlayerAmount }: Props) {
           flexDirection: "column",
           backgroundColor: "white",
           border: "solid",
-          borderRadius: "10%",
           height: "60%",
           width: "60%",
           position: "absolute",
