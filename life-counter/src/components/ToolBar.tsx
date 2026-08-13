@@ -66,7 +66,7 @@ export function ToolBar({ diceRoll, changePlayerAmount }: Props) {
           height: "60%",
           width: "60%",
           position: "absolute",
-          top: "40%",
+          top: "45%",
           left: "50%",
           transform: "translate(-50%, -50%)",
           zIndex: "1",

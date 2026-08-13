@@ -54,3 +54,10 @@ body {
     font-size: 30px;
   }
 }
+
+@media (max-height: 550px) {
+  .playerSelectingBtn {
+    height: 15%;
+    font-size: 100%;
+  }
+}
