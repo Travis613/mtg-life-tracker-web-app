@@ -37,6 +37,14 @@ body {
   color: black;
 }
 
+.rotateBtn {
+  background-color: rgba(255, 255, 255, 0.15);
+  border: solid;
+  border-color: black;
+  color: black;
+  border-radius: 20%;
+}
+
 @media (max-width: 1100px) {
   .counterBtn {
     font-size: 30px;

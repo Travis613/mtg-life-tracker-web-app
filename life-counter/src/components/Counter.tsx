@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { RotateCw } from "lucide-react";
+import { RotateCw, RotateCcw } from "lucide-react";
 
 interface counterProps {
   amountOfPlayers: number;
@@ -7,11 +7,16 @@ interface counterProps {
 
 export function Counter({ amountOfPlayers }: counterProps) {
   const [count, setCount] = useState<number>(amountOfPlayers > 2 ? 40 : 20);
-  const [rotateAmount, setRotateAmount] = useState(0);
+  let [rotateAmount, setRotateAmount] = useState(0);
 
   useEffect(() => {
     setCount(amountOfPlayers > 2 ? 40 : 20);
   }, [amountOfPlayers]);
+
+  function rotateCounter(direction: string) {
+    if (direction === "clockwise") setRotateAmount((rotateAmount += 90));
+    else setRotateAmount((rotateAmount -= 90));
+  }
 
   return (
     <div
@@ -30,22 +35,20 @@ export function Counter({ amountOfPlayers }: counterProps) {
         style={{
           display: "flex",
           justifyContent: "center",
+          gap: "5%",
         }}
       >
         <button
-          onClick={() =>
-            rotateAmount === 0 ? setRotateAmount(180) : setRotateAmount(0)
-          }
-          style={{
-            backgroundColor: "rgba(255, 255, 255, 0.15)",
-            border: "solid",
-            borderColor: "black",
-            color: "black",
-            borderRadius: "20%",
-          }}
+          onClick={() => rotateCounter("clockwise")}
           className="rotateBtn hoverBtn"
         >
           <RotateCw />
+        </button>
+        <button
+          className="rotateBtn hoverBtn"
+          onClick={() => rotateCounter("counterclockwise")}
+        >
+          <RotateCcw />
         </button>
       </div>
       <div
