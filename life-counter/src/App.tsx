@@ -49,17 +49,7 @@ export default function () {
   }
 
   return (
-    <div
-      style={{
-        height: "95dvh",
-        width: "100%",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        gap: "1%",
-      }}
-    >
+    <div className="documentParentContainer">
       <div>
         <ToolBar
           diceRoll={rollDice}
@@ -68,14 +58,7 @@ export default function () {
       </div>
       <div
         style={{
-          display: "flex",
           flexDirection: playerAmount === 2 ? "column" : "row",
-          flex: 1,
-          width: "100%",
-          justifyContent: "center",
-          alignItems: "center",
-          flexWrap: "wrap",
-          gap: "1%",
         }}
         className="counterContainer"
       >
@@ -83,7 +66,6 @@ export default function () {
           <div
             key={index}
             style={{
-              //height: (playerAmount > 4 && isPortraitMode() ? "30%" : "45%"),
               height: isPortraitMode()
                 ? playerAmount > 4
                   ? "30%"

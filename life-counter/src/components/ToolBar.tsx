@@ -12,22 +12,8 @@ export function ToolBar({ diceRoll, changePlayerAmount }: Props) {
 
   return (
     <div>
-      <div
-        style={{
-          backgroundColor: "#121417",
-          display: "flex",
-          flexDirection: "row",
-          gap: "1%",
-        }}
-        className="toolbarBtn"
-      >
-        <div
-          style={{
-            border: "solid",
-            borderRadius: "20%",
-            backgroundColor: "white",
-          }}
-        >
+      <div className="toolbarBtn">
+        <div style={{}} className="diceBtnContainer">
           <Dices
             onClick={() => (
               setDiceVisability(true),
@@ -38,13 +24,7 @@ export function ToolBar({ diceRoll, changePlayerAmount }: Props) {
             size={32}
           />
         </div>
-        <div
-          style={{
-            border: "solid",
-            borderRadius: "20%",
-            backgroundColor: "white",
-          }}
-        >
+        <div className="dropdownPlayerSelectingBtn">
           {playerMenu !== true ? (
             <User onClick={() => setPlayerMenu(true)} size={32} />
           ) : (
@@ -60,18 +40,6 @@ export function ToolBar({ diceRoll, changePlayerAmount }: Props) {
         className="dropdownPlayerMenu"
         style={{
           display: playerMenu ? "flex" : "none",
-          flexDirection: "column",
-          backgroundColor: "white",
-          border: "solid",
-          height: "60%",
-          width: "60%",
-          position: "absolute",
-          top: "45%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
-          zIndex: "1",
-          justifyContent: "center",
-          alignItems: "center",
         }}
       >
         <button

@@ -21,23 +21,11 @@ export function Counter({ amountOfPlayers }: counterProps) {
   return (
     <div
       style={{
-        height: "100%",
-        width: "100%",
-        color: "white",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-around",
-        fontSize: "75px",
         rotate: `${rotateAmount}deg`,
       }}
+      className="counterContainerParent"
     >
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          gap: "5%",
-        }}
-      >
+      <div className="counterToolbarContainer">
         <button
           onClick={() => rotateCounter("clockwise")}
           className="rotateBtn hoverBtn"
@@ -51,17 +39,10 @@ export function Counter({ amountOfPlayers }: counterProps) {
           <RotateCcw />
         </button>
       </div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-evenly",
-        }}
-      >
+      <div className="counterBtnContainer">
         <button
           style={{
             width: amountOfPlayers === 2 ? "15%" : "30%",
-            height: "100%",
           }}
           onClick={() => setCount(count - 1)}
           className="counterBtn hoverBtn"
@@ -72,10 +53,9 @@ export function Counter({ amountOfPlayers }: counterProps) {
         <button
           style={{
             width: amountOfPlayers === 2 ? "15%" : "30%",
-            height: "100%",
           }}
           onClick={() => setCount(count + 1)}
-          className="counterBtn"
+          className="counterBtn hoverBtn"
         >
           + 1
         </button>
