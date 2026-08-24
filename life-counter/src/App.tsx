@@ -1,14 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Dice1, Dice2, Dice3, Dice4, Dice5, Dice6 } from "lucide-react";
 import { Counter } from "./components/Counter";
 import { ToolBar } from "./components/ToolBar";
 
 export default function () {
   const [playerAmount, setPlayerAmount] = useState(2);
-
-  useEffect(() => {
-    isPortraitMode();
-  }, []);
 
   const playersArray = [...Array(playerAmount)];
 
@@ -40,14 +36,6 @@ export default function () {
     setPlayerAmount(newPlayerAmount);
   }
 
-  function isPortraitMode() {
-    let deviceOrientation = window.matchMedia("(orientation: portrait)");
-    if (deviceOrientation.matches) {
-      return true;
-    }
-    return false;
-  }
-
   return (
     <div className="documentParentContainer">
       <div>
@@ -66,11 +54,7 @@ export default function () {
           <div
             key={index}
             style={{
-              height: isPortraitMode()
-                ? playerAmount > 4
-                  ? "30%"
-                  : "45%"
-                : "35%",
+              height: playerAmount > 4 ? "30%" : "45%",
               width: playerAmount === 2 ? "95%" : "45%",
               backgroundColor: playerColors[index],
             }}
