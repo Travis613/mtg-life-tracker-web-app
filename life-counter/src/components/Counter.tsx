@@ -42,7 +42,7 @@ export function Counter({ amountOfPlayers }: counterProps) {
       <div className="counterBtnContainer">
         <button
           style={{
-            width: amountOfPlayers === 2 ? "15%" : "30%",
+            width: amountOfPlayers === 2 ? "20%" : "30%",
           }}
           onClick={() => setCount(count - 1)}
           className="counterBtn hoverBtn"
@@ -52,7 +52,7 @@ export function Counter({ amountOfPlayers }: counterProps) {
         <div className="count">{count}</div>
         <button
           style={{
-            width: amountOfPlayers === 2 ? "15%" : "30%",
+            width: amountOfPlayers === 2 ? "20%" : "30%",
           }}
           onClick={() => setCount(count + 1)}
           className="counterBtn hoverBtn"
