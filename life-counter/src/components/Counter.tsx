@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { RotateCw, RotateCcw } from "lucide-react";
+import { RotateCw, RotateCcw, Settings, X } from "lucide-react";
 
 interface counterProps {
   amountOfPlayers: number;
@@ -7,6 +7,7 @@ interface counterProps {
 
 export function Counter({ amountOfPlayers }: counterProps) {
   const [count, setCount] = useState<number>(amountOfPlayers > 2 ? 40 : 20);
+  const [settingsIsActive, setSettingsIsActive] = useState(false);
   let [rotateAmount, setRotateAmount] = useState(0);
 
   useEffect(() => {
@@ -26,18 +27,37 @@ export function Counter({ amountOfPlayers }: counterProps) {
       className="counterContainerParent"
     >
       <div className="counterToolbarContainer">
-        <button
-          onClick={() => rotateCounter("clockwise")}
-          className="rotateBtn hoverBtn"
+        <div
+          style={{ display: settingsIsActive ? "flex" : "none" }}
+          className="counterToolBar"
         >
-          <RotateCw />
-        </button>
-        <button
-          className="rotateBtn hoverBtn"
-          onClick={() => rotateCounter("counterclockwise")}
-        >
-          <RotateCcw />
-        </button>
+          <button
+            onClick={() => rotateCounter("clockwise")}
+            className="playerToolBarBtn hoverBtn"
+          >
+            <RotateCw />
+          </button>
+          <button
+            className="playerToolBarBtn hoverBtn"
+            onClick={() => rotateCounter("counterclockwise")}
+          >
+            <RotateCcw />
+          </button>
+          <button
+            onClick={() => setSettingsIsActive(false)}
+            className="playerToolBarBtn hoverBtn"
+          >
+            <X />
+          </button>
+        </div>
+        <div style={{ display: !settingsIsActive ? "block" : "none" }}>
+          <button
+            onClick={() => setSettingsIsActive(true)}
+            className="playerToolBarBtn hoverBtn"
+          >
+            <Settings />
+          </button>
+        </div>
       </div>
       <div className="counterBtnContainer">
         <button
