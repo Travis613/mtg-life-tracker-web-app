@@ -1,5 +1,6 @@
 import { Dices, User, X } from "lucide-react";
 import { useState, type ReactElement } from "react";
+import { PlayerSelectingBtn } from "./playerSelectingBtn";
 
 interface Props {
   diceRoll: () => ReactElement;
@@ -9,6 +10,16 @@ interface Props {
 export function ToolBar({ diceRoll, changePlayerAmount }: Props) {
   const [diceVisability, setDiceVisability] = useState(false);
   const [playerMenu, setPlayerMenu] = useState(false);
+
+  const playerBtnChoices = [2, 3, 4, 5, 6, "Close"];
+
+  function handlePlayerSelectingBtnClicks(choice: string | number) {
+    if (typeof choice === "number") {
+      changePlayerAmount(choice);
+      setPlayerMenu(false);
+    }
+    setPlayerMenu(false);
+  }
 
   return (
     <div>
@@ -42,43 +53,12 @@ export function ToolBar({ diceRoll, changePlayerAmount }: Props) {
           display: playerMenu ? "flex" : "none",
         }}
       >
-        <button
-          onClick={() => (changePlayerAmount(2), setPlayerMenu(false))}
-          className="playerSelectingBtn"
-        >
-          2
-        </button>
-        <button
-          onClick={() => (changePlayerAmount(3), setPlayerMenu(false))}
-          className="playerSelectingBtn"
-        >
-          3
-        </button>
-        <button
-          onClick={() => (changePlayerAmount(4), setPlayerMenu(false))}
-          className="playerSelectingBtn"
-        >
-          4
-        </button>
-        <button
-          onClick={() => (changePlayerAmount(5), setPlayerMenu(false))}
-          className="playerSelectingBtn"
-        >
-          5
-        </button>
-        <button
-          onClick={() => (changePlayerAmount(6), setPlayerMenu(false))}
-          className="playerSelectingBtn"
-        >
-          6
-        </button>
-        <button
-          onClick={() => setPlayerMenu(false)}
-          className="playerSelectingBtn"
-          style={{ backgroundColor: "lightcoral" }}
-        >
-          Close
-        </button>
+        {playerBtnChoices.map((choice) => (
+          <PlayerSelectingBtn
+            handleClicks={() => handlePlayerSelectingBtnClicks(choice)}
+            btnText={choice}
+          />
+        ))}
       </div>
     </div>
   );

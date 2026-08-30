@@ -8,6 +8,15 @@ export default function () {
 
   const playersArray = [...Array(playerAmount)];
 
+  const diceOptions = [
+    <Dice1 className="dice" />,
+    <Dice2 className="dice" />,
+    <Dice3 className="dice" />,
+    <Dice4 className="dice" />,
+    <Dice5 className="dice" />,
+    <Dice6 className="dice" />,
+  ];
+
   const playerColors = [
     "#7C3AED",
     "#2563EB",
@@ -17,15 +26,6 @@ export default function () {
     "#0891B2",
     "#DB2777",
     "#4B5563",
-  ];
-
-  const diceOptions = [
-    <Dice1 className="dice" />,
-    <Dice2 className="dice" />,
-    <Dice3 className="dice" />,
-    <Dice4 className="dice" />,
-    <Dice5 className="dice" />,
-    <Dice6 className="dice" />,
   ];
 
   function rollDice() {
