@@ -1,6 +1,6 @@
 import { Dices, User, X } from "lucide-react";
 import { useState, type ReactElement } from "react";
-import { PlayerSelectingBtn } from "./playerSelectingBtn";
+import { PlayerSelectingBtn } from "./PlayerSelectingBtn";
 
 interface Props {
   diceRoll: () => ReactElement;
