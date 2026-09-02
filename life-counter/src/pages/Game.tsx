@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Dice1, Dice2, Dice3, Dice4, Dice5, Dice6 } from "lucide-react";
 import { Counter } from "@/components/Counter";
 import { ToolBar } from "@/components/ToolBar";
+import { playerColors } from "@/utils/colorUtils";
 
 export function Game() {
   const [playerAmount, setPlayerAmount] = useState(2);
@@ -17,17 +18,6 @@ export function Game() {
     <Dice6 className="dice" />,
   ];
 
-  const playerColors = [
-    "#7C3AED",
-    "#2563EB",
-    "#059669",
-    "#DC2626",
-    "#D97706",
-    "#0891B2",
-    "#DB2777",
-    "#4B5563",
-  ];
-
   function rollDice() {
     return diceOptions[Math.floor(Math.random() * diceOptions.length)];
   }
@@ -35,6 +25,7 @@ export function Game() {
   function handleChangingPlayerAmounts(newPlayerAmount: number) {
     setPlayerAmount(newPlayerAmount);
   }
+
   return (
     <>
       <div>
