@@ -52,7 +52,7 @@ export default function () {
       >
         {playersArray.map((_player, index) => (
           <div
-            key={index}
+            key={crypto.randomUUID()}
             style={{
               height: playerAmount > 4 ? "30%" : "45%",
               width: playerAmount === 2 ? "95%" : "45%",

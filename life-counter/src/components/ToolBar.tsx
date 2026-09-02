@@ -55,6 +55,7 @@ export function ToolBar({ diceRoll, changePlayerAmount }: Props) {
       >
         {playerBtnChoices.map((choice) => (
           <PlayerSelectingBtn
+            key={crypto.randomUUID()}
             handleClicks={() => handlePlayerSelectingBtnClicks(choice)}
             btnText={choice}
           />
